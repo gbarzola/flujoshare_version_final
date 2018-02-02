@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  commits: MyString
+  status: MyString
+  contribuidores: MyString
+  version: MyString
+
+two:
+  nombre: MyString
+  commits: MyString
+  status: MyString
+  contribuidores: MyString
+  version: MyString

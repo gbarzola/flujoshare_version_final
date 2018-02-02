@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @proceso.nombre %>
+</p>
+
+<p>
+  <strong>Commits:</strong>
+  <%= @proceso.commits %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @proceso.status %>
+</p>
+
+<p>
+  <strong>Contribuidores:</strong>
+  <%= @proceso.contribuidores %>
+</p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @proceso.version %>
+</p>
+
+
+<%= link_to 'Edit', edit_proceso_path(@proceso) %> |
+<%= link_to 'Back', procesos_path %>

@@ -1,0 +1,44 @@
+
+<%= form_with(model: proceso, local: true) do |form| %>
+  <% if proceso.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(proceso.errors.count, "error") %> prohibited this proceso from being saved:</h2>
+
+      <ul>
+      <% proceso.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :proceso_nombre, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :commits %>
+    <%= form.text_field :commits, id: :proceso_commits, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :proceso_status, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :contribuidores %>
+    <%= form.text_field :contribuidores, id: :proceso_contribuidores, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :version %>
+    <%= form.text_field :version, id: :proceso_version, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
