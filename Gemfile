@@ -6,17 +6,18 @@ git_source(:github) do |repo_name|
 end
 
 
-gem 'rails', '~> 5.1.4'
+gem 'rails'
 gem 'sqlite3'
 gem 'puma', '~> 3.7'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2'
-gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.5'
+gem 'sass-rails'
+gem 'uglifier'
+gem 'coffee-rails'
+gem 'turbolinks'
+gem 'jbuilder'
 gem 'devise'
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

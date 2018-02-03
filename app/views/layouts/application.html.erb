@@ -5,9 +5,14 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">    
+
   </head>
   
   <body>
     <%= yield %>
+    
+    <%= render 'layouts/flujo'%>
+    
   </body>
 </html>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :comentarios
   resources :procesos
   devise_for :users
   
