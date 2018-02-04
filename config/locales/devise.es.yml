@@ -1,6 +1,4 @@
-# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
-
-en:
+es:
   devise:
     confirmations:
       confirmed: "Su cuenta ha sido confirmada."
@@ -58,4 +56,4 @@ en:
       not_locked: "no estaba bloqueado."
       not_saved:
         one: "1 error impidió que este %{resource} fuese guardado:"
-        other: "%{count} errores impidieron que este %{resource} fuese guardado:"  
+        other: "%{count} errores impidieron que este %{resource} fuese guardado:"
