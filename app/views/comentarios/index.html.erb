@@ -1,3 +1,47 @@
+
+<style>
+.custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+    }
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    }
+	
+	.nav-item {width: 20%;}
+	.nav-link {text-align: center;color: #797979;}
+	.nav-link.active {    border-bottom: 5px solid #4FE3C1;}
+	
+	
+</style>
+
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link " href="#">Diagramas de flujo</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Comentarios</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Cambios Aprobados</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Estadisticas</a>
+  </li>
+    <li class="nav-item">
+    <a class="nav-link" href="#">Contribuidores</a>
+  </li>
+  
+  
+</ul>
+
+
+
+
 <p id="notice"><%= notice %></p>
 
 <h1>Comentarios</h1>
@@ -5,22 +49,26 @@
 <table>
   <thead>
     <tr>
-      <th>Idusuario</th>
+      <th style="display:none" >Idusuario</th>
       <th>Descripcion</th>
-      <th>Fecha</th>
-      <th colspan="3"></th>
+      <th >Fecha</th>
+      <th colspan="3" style="display:none"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @comentarios.each do |comentario| %>
-      <tr>
-        <td><%= comentario.idUsuario %></td>
-        <td><%= comentario.descripcion %></td>
+      <tr >
+        <td style="display:none"><%= comentario.idUsuario %></td>
+        <td class="col-md-10">
+            <div class="card border-dark mb-3">
+          <div class="card-body text-dark" style="background: #e3faf4;">
+      <!--p class="card-text">Luis committed on 28 an 2018</p>-->
+      <h5 class="card-title">    <%= comentario.descripcion %> </h5></td>
         <td><%= comentario.fecha %></td>
-        <td><%= link_to 'Show', comentario %></td>
-        <td><%= link_to 'Edit', edit_comentario_path(comentario) %></td>
-        <td><%= link_to 'Destroy', comentario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td style="display:none"><%= link_to 'Show', comentario %></td>
+        <td style="display:none"><%= link_to 'Edit', edit_comentario_path(comentario) %></td>
+        <td style="display:none"><%= link_to 'Destroy', comentario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

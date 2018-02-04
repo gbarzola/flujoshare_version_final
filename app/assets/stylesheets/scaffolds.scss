@@ -85,7 +85,30 @@ label {
 }
 
 nav.navbar.navbar-light {
-	padding-top:10px;
-	padding-bottom:10px;
-	background-color:#98BFEC;
+	background-color:#F9F9F9;
+}
+
+.icono{
+	text-align: center;
+}
+
+.icono > img {
+  vertical-align: middle;
+  margin-bottom: 0px !important;
+}
+
+.nav-item {
+	list-style-type: none;
+  padding-top:20px;
+	padding-bottom:20px;
+}
+
+.nav-item > a:hover{
+	border-bottom: solid 5px #4A90E2;
+}
+
+.nav-item > a {
+  text-decoration: none;
+  padding-bottom:24px !important;
+  
 }
