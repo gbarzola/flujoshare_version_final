@@ -1,133 +1,131 @@
 
 <div class="notes" data-locale="" data-lbl-localimg="">
-
-        <div class="container">
+    <div class="container">
+        <div class="btn-group btn-group-sm">
+            <a class="btn btn-light" title="New&emsp;&emsp;&emsp;Ctlr+T" data-nts-cmd="new">
+                <i class="far fa-file"></i>
+            </a>
+            <a class="btn btn-light" title="Open&emsp;&emsp;&emsp;Ctlr+O" data-nts-cmd="open">
+                <i class="far fa-folder-open"></i>
+            </a> 
+            <a class="btn btn-light" title="Save&emsp;&emsp;&emsp;Ctlr+S" data-nts-cmd="save">
+                <i class="far fa-save"></i>&nbsp;Guardar
+            </a> 
+            <a class="btn btn-light" title="Print&emsp;&emsp;&emsp;Ctlr+P" data-nts-cmd="print">
+                <i class="fas fa-print"></i>
+            </a>
+            <a class="btn btn-light" title="Export" data-nts-cmd="export" data-param="png">
+                <i class="fas fa-sign-out-alt"></i>
+            </a>
+        </div>
+        <div class="jh2d-editor">
             <div class="btn-group btn-group-sm">
-                <a class="btn btn-light" title="New&emsp;&emsp;&emsp;Ctlr+T" data-nts-cmd="new">
-                    <i class="far fa-file"></i>
-                </a>
-                <a class="btn btn-light" title="Open&emsp;&emsp;&emsp;Ctlr+O" data-nts-cmd="open">
-                    <i class="far fa-folder-open"></i>
-                </a> 
-                <a class="btn btn-light" title="Save&emsp;&emsp;&emsp;Ctlr+S" data-nts-cmd="save">
-                    <i class="far fa-save"></i>&nbsp;Guardar
-                </a> 
-                <a class="btn btn-light" title="Print&emsp;&emsp;&emsp;Ctlr+P" data-nts-cmd="print">
-                    <i class="fas fa-print"></i>
-                </a>
-                <a class="btn btn-light" title="Export" data-nts-cmd="export" data-param="png">
-                    <i class="fas fa-sign-out-alt"></i>
-                </a>
+                <button type="button" class="btn btn-light" data-jh-cmd="shape" data-type="line" title="Line" data-mode="4">
+                    <i class="far fa-window-minimize"></i>
+                </button>
+                <button type="button" class="btn btn-light" data-jh-cmd="shape" data-type="line" data-header="2" title="Arrow" data-mode="4">
+                    <i class="fas fa-long-arrow-alt-right"></i>
+                </button>
+                <button type="button" class="btn btn-light" data-jh-cmd="text" data-type="rect" title="Text Box">
+                    <i class="fas fa-font"></i>
+                </button>
+                <button type="button" class="btn btn-light" data-jh-cmd="shape" data-type="rect" title="Rectangle">
+                    <i class="fas fa-square"></i>
+                </button>
+                <button type="button" class="btn btn-light" data-jh-cmd="shape" data-type="oval" title="Oval">
+                    <i class="fas fa-circle"></i>
+                </button>
+                <button type="button" class="btn btn-light dropdown-toggle" id="zoomBtn" data-toggle="dropdown" title="Zoom Level">
+                    <span></span><span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a href="#" data-jh-cmd="zoom" data-param="4">400%</a>
+                    </li>
+                    <li>
+                        <a href="#" data-jh-cmd="zoom" data-param="2">200%</a>
+                    </li>
+                    <li>
+                        <a href="#" data-jh-cmd="zoom" data-param="1">100%</a>
+                    </li>
+                    <li>
+                        <a href="#" data-jh-cmd="zoom" data-param="0.66">66%</a>
+                    </li>
+                    <li>
+                        <a href="#" data-jh-cmd="zoom" data-param="0.5">50%</a>
+                    </li>
+                    <li>
+                        <a href="#" data-jh-cmd="zoom" data-param="0.33">33%</a>
+                    </li>
+                </ul>
+                <button type="button" class="btn btn-light" title="Zoom In" data-jh-cmd="zoom" data-opt="1" data-param="0.1">
+                    <i class="fas fa-search-plus"></i>
+                </button>
+                <button type="button" class="btn btn-light" title="Zoom Out" data-jh-cmd="zoom" data-opt="-1" data-param="0.1">
+                    <i class="fas fa-search-minus"></i>
+                </button>
             </div>
-            
-            <div class="jh2d-editor">
-                <div class="btn-group btn-group-sm">
-                    <button type="button" class="btn btn-light" data-jh-cmd="shape" data-type="line" title="Line" data-mode="4">
-                        <i class="far fa-window-minimize"></i>
-                    </button>
-                    <button type="button" class="btn btn-light" data-jh-cmd="shape" data-type="line" data-header="2" title="Arrow" data-mode="4">
-                        <i class="fas fa-long-arrow-alt-right"></i>
-                    </button>
-                    <button type="button" class="btn btn-light" data-jh-cmd="text" data-type="rect" title="Text Box">
-                        <i class="fas fa-font"></i>
-                    </button>
-                    <button type="button" class="btn btn-light" data-jh-cmd="shape" data-type="rect" title="Rectangle">
-                        <i class="fas fa-square"></i>
-                    </button>
-                    <button type="button" class="btn btn-light" data-jh-cmd="shape" data-type="oval" title="Oval">
-                        <i class="fas fa-circle"></i>
-                    </button>
-                    <button type="button" class="btn btn-light dropdown-toggle" id="zoomBtn" data-toggle="dropdown" title="Zoom Level">
-                        <span></span><span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#" data-jh-cmd="zoom" data-param="4">400%</a>
+            <div class="jh2d-canvas">
+                <div class="jh2d-text-box" contenteditable="true">
+                </div>
+                <div class="dropdown clearfix ctx-menu">
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" style="display:block;position:static;margin-bottom:5px">
+                        <li>
+                            <a tabindex="-1" data-jh-cmd="edit" href="#">Edit Text</a>
                         </li>
-                        <li><a href="#" data-jh-cmd="zoom" data-param="2">200%</a>
+                        <li class="divider"></li>
+                        <li>
+                            <a tabindex="-1" data-jh-cmd="group" data-param="group" href="#">Group</a>
                         </li>
-                        <li><a href="#" data-jh-cmd="zoom" data-param="1">100%</a>
+                        <li>
+                            <a tabindex="-1" data-jh-cmd="group" data-param="ungroup" href="#">Ungroup</a>
                         </li>
-                        <li><a href="#" data-jh-cmd="zoom" data-param="0.66">66%</a>
+                        <li class="divider"></li>
+                        <li>
+                            <a data-jh-cmd="layer" data-param="bring2Forward" href="#">Bring Up</a>
                         </li>
-                        <li><a href="#" data-jh-cmd="zoom" data-param="0.5">50%</a>
+                        <li>
+                            <a data-jh-cmd="layer" data-param="send2Backward" href="#">Send Back</a>
                         </li>
-                        <li><a href="#" data-jh-cmd="zoom" data-param="0.33">33%</a>
+                        <li>
+                            <a data-jh-cmd="layer" data-param="bring2Front" href="#">On Top</a>
+                        </li>
+                        <li>
+                            <a data-jh-cmd="layer" data-param="send2Back" href="#">On Bottom</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="dropdown disabled">
+                            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Align
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a data-jh-cmd="align" data-param="0" href="#">Left</a>
+                                </li>
+                                <li>
+                                    <a data-jh-cmd="align" data-param="1" href="#">Right</a>
+                                </li>
+                                <li>
+                                    <a data-jh-cmd="align" data-param="4" href="#">Top</a>
+                                </li>
+                                <li>
+                                    <a data-jh-cmd="align" data-param="5" href="#">Bottom</a>
+                                </li>
+                                <li>
+                                    <a data-jh-cmd="align" data-param="6" href="#">Vertical Center</a>
+                                </li>
+                                <li>
+                                    <a data-jh-cmd="align" data-param="2" href="#">Horizontal Center</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
-                    <button type="button" class="btn btn-light" title="Zoom In" data-jh-cmd="zoom" data-opt="1" data-param="0.1"><i class="fas fa-search-plus"></i>
-                    </button>
-                    <button type="button" class="btn btn-light" title="Zoom Out" data-jh-cmd="zoom" data-opt="-1" data-param="0.1"><i class="fas fa-search-minus"></i>
-                    </button>
                 </div>
-                
-                <div class="jh2d-canvas">
-                    <div class="jh2d-text-box" contenteditable="true"></div>
-                    <div class="dropdown clearfix ctx-menu">
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" style="display:block;position:static;margin-bottom:5px">
-                            <li><a tabindex="-1" data-jh-cmd="edit" href="#">Edit Text</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li><a tabindex="-1" data-jh-cmd="group" data-param="group" href="#">Group</a>
-                            </li>
-                            <li><a tabindex="-1" data-jh-cmd="group" data-param="ungroup" href="#">Ungroup</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li><a data-jh-cmd="layer" data-param="bring2Forward" href="#">Bring Up</a>
-                            </li>
-                            <li><a data-jh-cmd="layer" data-param="send2Backward" href="#">Send Back</a>
-                            </li>
-                            <li><a data-jh-cmd="layer" data-param="bring2Front" href="#">On Top</a>
-                            </li>
-                            <li><a data-jh-cmd="layer" data-param="send2Back" href="#">On Bottom</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li class="dropdown disabled"><a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Align<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a data-jh-cmd="align" data-param="0" href="#">Left</a>
-                                    </li>
-                                    <li><a data-jh-cmd="align" data-param="1" href="#">Right</a>
-                                    </li>
-                                    <li><a data-jh-cmd="align" data-param="4" href="#">Top</a>
-                                    </li>
-                                    <li><a data-jh-cmd="align" data-param="5" href="#">Bottom</a>
-                                    </li>
-                                    <li><a data-jh-cmd="align" data-param="6" href="#">Vertical Center</a>
-                                    </li>
-                                    <li><a data-jh-cmd="align" data-param="2" href="#">Horizontal Center</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <canvas>
-                        <canvas>
-                            <canvas>
-                
+                <canvas>
+            </div>        
+            
         </div>
-    </div>
-    <div class="modal fade" id="myMsgBox" tabindex="-1" role="dialog" data-locales="Alert,Confirm,Prompt">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title"></h4>
-                </div>
-                <div class="modal-body">
-                    <p class="text-danger"></p>
-                    <div class="form-group hidden">
-                        <label for="__prompt" class="control-label"></label>
-                        <input type="text" class="form-control" id="__prompt">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-which="1" data-dismiss="modal">Yes</button>
-                    <button type="button" class="btn btn-danger" data-which="-1" data-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-light" data-which="0" data-dismiss="modal">Cancel</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
+    </div>            
+</div>
+
