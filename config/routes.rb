@@ -19,5 +19,9 @@ Rails.application.routes.draw do
   get 'menu/cambios_aprobados'
   get 'menu/estadisticas'
   get 'menu/contribuidores'
+  
+  resources :posts do
+  	resources :comments
+  end
 
 end

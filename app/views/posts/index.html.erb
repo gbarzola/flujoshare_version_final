@@ -1,0 +1,12 @@
+<%= render 'procesos/nav' %>
+<br> 
+<% if user_signed_in? %>
+<div>
+	<%= link_to "Nuevo Post", new_post_path, class: "btn btn-primary" %>
+</div>
+<% end %>
+<% @posts.each do |post| %>
+		<h2 class="title"><%= link_to post.titulo, post %></h2>
+		<p class="date"><%= post.created_at.strftime("%B %d, %Y") %></p>
+
+<% end %>
