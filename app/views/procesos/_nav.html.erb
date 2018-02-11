@@ -12,10 +12,10 @@
               <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="30" height="30">
             </a>
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             Nombre 
+             <%= current_user.friendly_name  %> 
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <%= link_to "Perfil", edit_user_password_path, class: "dropdown-item" %>
+              <%= link_to "Perfil", edit_profile_path(current_user.default_profile), class: "dropdown-item" %>
               <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </div>

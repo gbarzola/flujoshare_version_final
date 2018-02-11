@@ -1,0 +1,12 @@
+<%= render 'procesos/nav' %>
+<br>
+<main role="main" class="container">
+<div class="my-3 p-3 bg-white rounded box-shadow">
+    <h1>Editar Perfil</h1>
+    <br>
+    <%= render 'form', profile: @profile %>
+    
+    <%= link_to 'Show', @profile %> |
+    <%= link_to 'Back', profile_path %>
+</div>
+</main>

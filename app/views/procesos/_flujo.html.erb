@@ -18,6 +18,10 @@
                 <i class="fas fa-sign-out-alt"></i>
             </a>
         </div>
+        <ul class="nav nav-tabs list-inline notes-tab hidden-print">
+            <li><a href="#" title="New Tab&emsp;Ctlr+T"><i class="glyphicon glyphicon-plus"></i></a>
+            </li>
+        </ul>
         <div class="jh2d-editor">
             <div class="btn-group btn-group-sm">
                 <button type="button" class="btn btn-light" data-jh-cmd="shape" data-type="line" title="Line" data-mode="4">
@@ -124,8 +128,31 @@
                 </div>
                 <canvas>
             </div>        
-            
         </div>
     </div>            
+</div>
+
+<div class="modal fade" id="myMsgBox" tabindex="-1" role="dialog" data-locales="Alert,Confirm,Prompt">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-danger"></p>
+                <div class="form-group hidden">
+                    <label for="__prompt" class="control-label"></label>
+                    <input type="text" class="form-control" id="__prompt">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-which="1" data-dismiss="modal">Si</button>
+                <button type="button" class="btn btn-danger" data-which="-1" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-default" data-which="0" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
 </div>
 

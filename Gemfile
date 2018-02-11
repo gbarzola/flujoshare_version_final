@@ -18,6 +18,8 @@ gem 'devise'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'bootstrap-datepicker-rails'
+gem 'chartkick'
 
 # gemas para agregar foto a perfil de usuario
 

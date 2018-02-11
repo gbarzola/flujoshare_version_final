@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-
+  
+  
+  resources :profiles, only: [:edit, :update]
   resources :comentarios
   resources :procesos
   devise_for :users

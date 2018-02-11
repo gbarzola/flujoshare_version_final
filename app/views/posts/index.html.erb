@@ -5,8 +5,14 @@
 	<%= link_to "Nuevo Post", new_post_path, class: "btn btn-primary" %>
 </div>
 <% end %>
-<% @posts.each do |post| %>
-		<h2 class="title"><%= link_to post.titulo, post %></h2>
-		<p class="date"><%= post.created_at.strftime("%B %d, %Y") %></p>
 
-<% end %>
+<main role="main" class="container">
+	<div class="my-3 p-3 bg-white rounded box-shadow">
+		<div id="comments">
+		<% @posts.each do |post| %>
+			<h2 class="title"><%= link_to post.titulo, post %></h2>
+			<p class="date"><%= post.created_at.strftime("%B %d, %Y") %></p>
+		<% end %>
+		</div>
+	</div> 
+</main> 

@@ -16,5 +16,8 @@
 //= require jquery_ujs
 //= require popper
 //= require bootstrap-sprockets
-//= diagram
+//= require raphael
+//= require morris
+//= require Chart.bundle
+//= require chartkick
 //= require_tree .

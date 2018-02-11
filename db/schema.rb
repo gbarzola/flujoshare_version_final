@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180210204451) do
+ActiveRecord::Schema.define(version: 20180211042302) do
 
   create_table "comentarios", force: :cascade do |t|
     t.string "idUsuario"
@@ -46,6 +46,16 @@ ActiveRecord::Schema.define(version: 20180210204451) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.string "nombre"
+    t.string "apellidos"
+    t.datetime "fecha_nacimiento"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -63,6 +73,7 @@ ActiveRecord::Schema.define(version: 20180210204451) do
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
