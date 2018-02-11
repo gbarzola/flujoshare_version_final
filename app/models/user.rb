@@ -12,17 +12,13 @@ class User < ApplicationRecord
   enum role: [:user, :operator, :chef, :admin]
   after_initialize :set_default_role
 
-  def set_default_role
-    self.role ||= :user
-  end
-  
   def friendly_name
-   if self.default_profile.nombre.nil?
-     self.email
-   else
-     self.profile.full_name
-   end
-end
+     if self.default_profile.nombre.nil?
+       self.email
+     else
+       self.profile.full_name
+     end
+  end
   
   def default_profile
     if self.profile.nil?
@@ -32,6 +28,10 @@ end
       self.save      
     end
     self.profile
+  end
+  
+  def set_default_role
+    self.role ||= :user
   end
   
 end

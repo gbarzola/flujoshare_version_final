@@ -9,13 +9,13 @@
           </div>
           <div class="col-4 d-flex justify-content-end align-items-center">
             <a>
-              <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="30" height="30">
+              <%= image_tag(current_user.avatar.url(:thumb), class: "rounded-circle",height: '40', width: '40') %>
             </a>
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
              <%= current_user.friendly_name  %> 
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <%= link_to "Perfil", edit_profile_path(current_user.default_profile), class: "dropdown-item" %>
+              <%= link_to "Perfil", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </div>

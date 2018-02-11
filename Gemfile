@@ -22,7 +22,6 @@ gem 'bootstrap-datepicker-rails'
 gem 'chartkick'
 
 # gemas para agregar foto a perfil de usuario
-
 gem 'paperclip'
 
 group :development, :test do

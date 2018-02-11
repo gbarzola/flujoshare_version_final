@@ -1,4 +1,4 @@
 <%= render 'procesos/nav' %>
 <h1>Menu#estadisticas</h1>
 <p>Find me in app/views/menu/estadisticas.html.erb</p>
-<%= line_chart Comment.group(:nombre).count %>
+<%= column_chart User.group(:email).count, xtitle: "Personas", ytitle: "Comentarios" %>
