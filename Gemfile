@@ -19,8 +19,9 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'bootstrap-datepicker-rails'
+# gemas para graficos
 gem 'chartkick'
-
+gem 'groupdate'
 # gemas para agregar foto a perfil de usuario
 gem 'paperclip'
 

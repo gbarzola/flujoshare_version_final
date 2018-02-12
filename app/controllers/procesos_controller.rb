@@ -14,7 +14,7 @@ class ProcesosController < ApplicationController
 
   # GET /procesos/new
   def new
-    @proceso = Proceso.new
+    @proceso = current_user.procesos.build
   end
 
   # GET /procesos/1/edit
@@ -24,7 +24,7 @@ class ProcesosController < ApplicationController
   # POST /procesos
   # POST /procesos.json
   def create
-    @proceso = Proceso.new(proceso_params)
+    @proceso = current_user.procesos.build(proceso_params)
 
     respond_to do |format|
       if @proceso.save

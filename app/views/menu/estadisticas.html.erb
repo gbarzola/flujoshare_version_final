@@ -1,4 +1,22 @@
 <%= render 'procesos/nav' %>
-<h1>Menu#estadisticas</h1>
-<p>Find me in app/views/menu/estadisticas.html.erb</p>
-<%= column_chart User.group(:email).count, xtitle: "Personas", ytitle: "Comentarios" %>
+<br> 
+<h3>Tus contribuciones</h3>
+<br>
+<h5>Cantidad de procesos elaborados</h5>
+<%= column_chart current_user.procesos.group_by_day(:created_at).count %>
+<br></br>
+
+<h5>Cantidad de posts publicados</h5>
+<%= column_chart current_user.posts.group_by_day(:created_at).count %>
+<br></br>
+
+<h3>Resultados a nivel empresa</h3>
+<br>
+<h5>Creación de procesos</h5>
+<%= line_chart Proceso.group_by_hour_of_day(:created_at, format: "%-l %P").count %>
+<br></br>
+<h5>Creación de posts</h5>
+<%= line_chart Post.group_by_hour_of_day(:created_at, format: "%-l %P").count %>
+<br></br>
+
+

@@ -10,9 +10,19 @@
 	<div class="my-3 p-3 bg-white rounded box-shadow">
 		<div id="comments">
 		<% @posts.each do |post| %>
-			<h2 class="title"><%= link_to post.titulo, post %></h2>
-			<p class="date"><%= post.created_at.strftime("%B %d, %Y") %></p>
+			<div class="row">
+			<div class="col-11">
+				<h2 class="title"><%= link_to post.titulo, post %></h2>
+				<span class="badge badge-secondary"><%= post.created_at.strftime("%B %d, %Y")%> por <%= post.user.email%></span>	
+			</div>
+			<div class="col-1">
+				<a class="imagen_post"><%= image_tag(post.user.avatar.url(:thumb), class: "rounded-circle",height: '40', width: '40') %></a> 
+			</div>
+			</div>
+			<br>
+			<hr>
 		<% end %>
+		 
 		</div>
 	</div> 
 </main> 

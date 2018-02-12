@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180211162446) do
+ActiveRecord::Schema.define(version: 20180212034757) do
 
   create_table "comentarios", force: :cascade do |t|
     t.string "idUsuario"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20180211162446) do
     t.text "descripcion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "procesos", force: :cascade do |t|
@@ -44,6 +46,8 @@ ActiveRecord::Schema.define(version: 20180211162446) do
     t.string "version"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_procesos_on_user_id"
   end
 
   create_table "profiles", force: :cascade do |t|

@@ -1,24 +1,14 @@
-# README
+# Pendientes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Tenemos que mejorar lo siguiente:
 
-Things you may want to cover:
+* [Procesos], los commits son las actualizaciones aprobadas por el admin
+* [Procesos], los contribuidores son las personas que editaron el proceso y fueron aprobados los cambios por al admin
+* [Procesos], el estatus debe ser una lista desplegable que tenga como estados: iniciado, en elaboracion, solicitud de aprobacion y "aprobado" siempre que el admin lo apruebe. 
+* [Procesos], guardar el diagrama de flujo y que este se guarde en la ruta publica tal como lo hace la gema paperclip.
 
-* Ruby version
+* [Cambios Aprobados], mostrar la lista de solicitudes de cambios aprobados donde esta el nombre del proceso, fecha, autor.
 
-* System dependencies
+* [Contribuidores], mostrar la lista de contribuidores que tiene la aplicacion, asi como el numero de procesos aprobados.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* [Admin], vista para aprobar procesos
