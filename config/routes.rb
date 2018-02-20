@@ -18,9 +18,12 @@ Rails.application.routes.draw do
 
   get 'menu/diagrama_flujo'
   get 'menu/comentarios'
-  get 'menu/cambios_aprobados'
+  get 'menu/cambios_aprobados', to: 'menu#cambios_aprobados' 
   get 'menu/estadisticas'
   get 'menu/contribuidores'
+  get 'menu/procesos_pendientes', to: 'menu#procesos_pendientes'
+  
+  get 'cambio_estado_proceso/:valor/:id', to: 'menu#cambio_estado_proceso', as: 'cambio_estado_proceso'
   
   resources :posts do
   	resources :comments

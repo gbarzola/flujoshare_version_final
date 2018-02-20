@@ -1,3 +1,38 @@
 <%= render 'procesos/nav' %>
-<h1>Menu#cambios_aprobados</h1>
-<p>Find me in app/views/menu/cambios_aprobados.html.erb</p>
+<main role="main" class="container">
+<div class="my-3 p-3 bg-white rounded box-shadow">
+<br>
+<h2><i class="far fa-check-circle"></i> Procesos Aceptados</h2>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Commits</th>
+      <th>Status</th>
+      <th>Contribuidores</th>
+      <th>Version</th>
+      <th>Creado Por</th>
+      <th>Fecha Creado</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @procesos.each do |proceso| %>
+        <td><%= proceso.nombre %></td>
+        <td><%= proceso.commits %></td>
+        <td>
+              <button type="button" class="btn <% if proceso.status == 'Pendiente' %> btn-outline-warning <% elsif proceso.status == 'Rechazado' %> btn-outline-danger <% else %> btn-outline-success <% end %>"  disabled>
+                <%= proceso.status %>
+              </button>
+        </td>
+        <td><%= proceso.contribuidores %></td>
+        <td><%= proceso.version %></td>
+        <td><%= proceso.user.email %></td>
+        <td><%= proceso.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</main>

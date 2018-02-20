@@ -24,7 +24,7 @@
 
   <div class="form-group">
     <%= form.label :status %>
-    <%= form.text_field :status, id: :proceso_status, class: "form-control" %>
+    <%= form.select(:status, ['-Seleccionar-','Iniciado','En Elaboracion','Solicitud de Aprobacion'], {}, { :class => 'form-control' }) %>
   </div>
 
   <div class="form-group">
@@ -34,7 +34,7 @@
 
   <div class="form-group">
     <%= form.label :version %>
-    <%= form.text_field :version, id: :proceso_version, class: "form-control" %>
+    <%= form.select(:version, ['-','v1.0','v1.1','v1.2','v1.3','v1.4','v1.5','v1.6','v1.7','v1.8','v1.9','v1.10'], {}, { :class => 'form-control' }) %>
   </div>
 
   <div class="actions">

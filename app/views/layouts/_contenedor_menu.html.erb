@@ -1,8 +1,18 @@
-<nav class="navbar navbar-light">
+<div class="container">
+<nav class="navbar" style="background-color: #FFF;">
     
     <li class="nav-item">
         <a><%= link_to "Diagramas de flujo", procesos_path, class: "p-2 text-muted" %></a>    
     </li>
+    <% if current_user.role == "admin" %>
+        <li class="nav-item">
+            <a><%= link_to "Procesos Pendientes", menu_procesos_pendientes_path, class: "p-2 text-muted" %>
+                <% if Proceso.where(status: "Solicitud de Aprobacion").count != 0 %>
+                    <span class="badge badge-danger"><%= Proceso.where(status: "Solicitud de Aprobacion").count %></span>
+                <% end %>
+            </a>    
+        </li>
+    <% end %>
     <li class="nav-item">
         <a><%= link_to "Comentarios", posts_path, class: "p-2 text-muted" %></a>
     </li>
@@ -16,19 +26,20 @@
         <a><%= link_to "Contribuidores", menu_contribuidores_path, class: "p-2 text-muted" %></a>    
     </li>
 </nav>
+</div>
 
 <div class="collapse navbar-collapse" id="navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to 'Posts', '#' %></li>
-            <% if current_user %>
-            <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
-            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+    <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'Posts', '#' %></li>
+        <% if current_user %>
+        <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
+        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
 
-            <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
+        <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
 
-            <% else %>
-            <li><%= link_to 'Login', new_user_session_path %></li>
-            <% end %>
-        </ul>
-    </div>
+        <% else %>
+        <li><%= link_to 'Login', new_user_session_path %></li>
+        <% end %>
+    </ul>
+</div>
 

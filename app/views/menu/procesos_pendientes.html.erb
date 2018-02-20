@@ -1,0 +1,52 @@
+<%= render 'procesos/nav' %>
+<main role="main" class="container">
+<div class="my-3 p-3 bg-white rounded box-shadow">
+<br>
+<h2><i class="far fa-clock"></i> Procesos Pendientes</h2>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Status</th>
+      <th>Contribuidores</th>
+      <th>Versión</th>
+      <th>Creado Por</th>
+      <th>Fecha Creado</th>
+      <th>Acción</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @procesos.each do |proceso| %>
+        <td><%= proceso.nombre %></td>
+        <td>
+          <div class="btn-group" role="group">
+              <button id="btnGroupDrop1" type="button" class="btn 
+              <% if proceso.status == 'Solicitud de Aprobacion' %>
+                btn-outline-warning
+              <% elsif proceso.status == 'Rechazado' %>
+                btn-outline-danger
+              <% else %>
+                btn-outline-success
+              <% end %>
+                dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= proceso.status %>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <%= link_to 'Aceptado', cambio_estado_proceso_path('Aceptado', proceso), class: "dropdown-item" %>
+                <%= link_to 'Rechazado', cambio_estado_proceso_path('Rechazado', proceso), class: "dropdown-item" %>
+              </div>
+          </div>
+        </td>
+        <td><%= proceso.contribuidores %></td>
+        <td><%= proceso.version %></td>
+        <td><%= proceso.user.email %></td>
+        <td><%= proceso.created_at %></td>
+        <td><%= link_to '', proceso, class: "btn btn-outline-primary fas fa-eye fa-2x" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</main>

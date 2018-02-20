@@ -6,11 +6,7 @@
 	<div class="container">	
 		<h4 class="border-bottom border-gray pb-2 mb-0">Caso <%= @post.id %>. <%= @post.titulo %></h4>
 		<p class="date">
-			Subido el <%= time_ago_in_words(@post.created_at) %>
-			<% if user_signed_in? %>
-			| <%= link_to 'Edit', edit_post_path(@post) %> |
-			  <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
-		  <% end %>
+			<i class="far fa-clock"></i> Subido hace <%= time_ago_in_words(@post.created_at) %>
 		</p>
 		<p class="body"><%= @post.descripcion %></p>
 	</div>

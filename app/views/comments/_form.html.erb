@@ -3,7 +3,7 @@
 		<h5 class="border-bottom border-gray pb-2 mb-0">Agrega un comentario</h5>
 		<br>
 		<%= form_for([@post, @post.comments.build]) do |f| %>
-			<%= f.label :nombre %><br>
+			<%= f.label :nombre, "Palabra clave" %><br>
 			<%= f.text_field :nombre , class: "form-control"%><br>
 			<br>
 			<%= f.label :comentario %><br>

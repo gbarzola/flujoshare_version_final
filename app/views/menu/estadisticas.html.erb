@@ -1,22 +1,41 @@
 <%= render 'procesos/nav' %>
-<br> 
-<h3>Tus contribuciones</h3>
-<br>
-<h5>Cantidad de procesos elaborados</h5>
-<%= column_chart current_user.procesos.group_by_day(:created_at).count %>
-<br></br>
-
-<h5>Cantidad de posts publicados</h5>
-<%= column_chart current_user.posts.group_by_day(:created_at).count %>
-<br></br>
-
-<h3>Resultados a nivel empresa</h3>
-<br>
-<h5>Creación de procesos</h5>
-<%= line_chart Proceso.group_by_hour_of_day(:created_at, format: "%-l %P").count %>
-<br></br>
-<h5>Creación de posts</h5>
-<%= line_chart Post.group_by_hour_of_day(:created_at, format: "%-l %P").count %>
-<br></br>
-
-
+<main role="main" class="container">
+	<div class="my-3 p-3 bg-white rounded box-shadow">
+        <br>
+        <h2><i class="far fa-chart-bar"></i> Estadisticas</h2>
+        <br> 
+        <hr>
+        <h4>1. Tus contribuciones</h4>
+        <hr>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Cantidad de procesos elaborados</h5>
+                    <%= column_chart current_user.procesos.group_by_day(:created_at).count %>
+                </div>
+                <div class="col-md-6">
+                    <h5>Cantidad de posts publicados</h5>
+                    <%= column_chart current_user.posts.group_by_day(:created_at).count %>    
+                </div>
+            </div>
+        </div>
+        <br></br>
+        <hr>
+        <h4>2. Resultados a nivel empresa</h4>
+        <hr>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Creación de procesos</h5>
+                    <%= line_chart Proceso.group_by_hour_of_day(:created_at, format: "%-l %P").count %>
+                </div>
+                <div class="col-md-6">
+                    <h5>Creación de posts</h5>
+                    <%= line_chart Post.group_by_hour_of_day(:created_at, format: "%-l %P").count %>    
+                </div>
+            </div>
+        </div>
+    </div>
+</main>    
