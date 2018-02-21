@@ -5,7 +5,7 @@
 		<br>
 		<div class="container">
   			<div class="row">
-			    <div class="col-md-10"><h2><i class="far fa-comments"></i> Comentarios</h2></div>
+			    <div class="col-md-10"><h2><i class="far fa-comments"></i> Comentarios [<%=Post.count%>]</h2></div>
 			    <div class="col-md-1"><% if user_signed_in? %><%= link_to "Nuevo Post", new_post_path, class: "btn btn-primary" %><% end %></div>      
   			</div>
 		</div>

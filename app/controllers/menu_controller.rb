@@ -21,7 +21,7 @@ class MenuController < ApplicationController
   end
   
   def cambios_aprobados
-    @procesos = Proceso.where(status: 'Aceptado')
+    @records = Record.order('proceso_id')
   end
   
   def estadisticas

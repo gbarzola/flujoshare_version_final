@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180212034757) do
+ActiveRecord::Schema.define(version: 20180221004710) do
 
   create_table "comentarios", force: :cascade do |t|
     t.string "idUsuario"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20180212034757) do
     t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
@@ -62,6 +63,13 @@ ActiveRecord::Schema.define(version: 20180212034757) do
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "records", force: :cascade do |t|
+    t.integer "proceso_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["proceso_id"], name: "index_records_on_proceso_id"
   end
 
   create_table "users", force: :cascade do |t|

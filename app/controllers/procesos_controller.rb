@@ -30,6 +30,11 @@ class ProcesosController < ApplicationController
       if @proceso.save
         format.html { redirect_to @proceso, notice: 'Proceso was successfully created.' }
         format.json { render :show, status: :created, location: @proceso }
+      if @proceso.status == "Solicitud de Aprobacion"
+        record = Record.new
+        record.proceso_id = @proceso.id
+        record.save
+      end
       else
         format.html { render :new }
         format.json { render json: @proceso.errors, status: :unprocessable_entity }
@@ -44,6 +49,11 @@ class ProcesosController < ApplicationController
       if @proceso.update(proceso_params)
         format.html { redirect_to @proceso, notice: 'Proceso was successfully updated.' }
         format.json { render :show, status: :ok, location: @proceso }
+      if @proceso.status == "Solicitud de Aprobacion"
+        record = Record.new
+        record.proceso_id = @proceso.id
+        record.save
+      end
       else
         format.html { render :edit }
         format.json { render json: @proceso.errors, status: :unprocessable_entity }
