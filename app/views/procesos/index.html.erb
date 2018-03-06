@@ -2,51 +2,50 @@
 
 <main role="main" class="container">
 <div class="my-3 p-3 bg-white rounded box-shadow">
-
-<!--<p id="notice" class="alert alert-success alert-dismissable" role="alert">-->
-   <!--<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>-->
-   <%= notice %>
-<!--</p>-->
 <br>
-<div class="container">
+  
   <div class="row">
-    <div class="col-md-10"><h2><i class="fas fa-cog"></i> Procesos [<%=Proceso.count%>]</h2></div>
-    <div class="col-md-1"><%= link_to 'Nuevo Proceso', new_proceso_path, class: "btn btn-primary" %></div>      
+    <div class="col-md-10 .col-sm-12">
+      <h3><i class="fas fa-cog"></i> Procesos [<%=Proceso.count%>]</h3>
+    </div>
+    <div class="col-md-2 .col-sm-12">
+      <%= link_to 'Nuevo Proceso', new_proceso_path, class: "btn btn-primary" %>
+    </div>        
   </div>
-</div>
-<br> 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Commits</th>
-      <th>Status</th>
-      <th>Contribuidores</th>
-      <th>Version</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @procesos.each do |proceso| %>
+  <br>
+  <div class="table-responsive">
+    <table class="table">
+    <thead>
       <tr>
-        <td><%= proceso.nombre %></td>
-        <td><%= proceso.commits %></td>
-        <td>
-          <button type="button" class="btn <% if proceso.status == 'Solicitud de Aprobacion' %> btn-outline-warning <% elsif proceso.status == 'Rechazado' %> btn-outline-danger <% else %> btn-outline-success <% end %>"  aria-haspopup="true" aria-expanded="false" disabled>
-            <%= proceso.status %>
-          </button>
-        </td>
-        <td><%= proceso.contribuidores %></td>
-        <td><%= proceso.version %></td>
-        <td><%= link_to '', proceso, class: "btn btn-outline-primary fas fa-eye fa-2x" %></td>
-        <td><%= link_to '', edit_proceso_path(proceso), class: "btn btn-outline-primary far fa-edit fa-2x" %></td>
-        <td><%= link_to '', proceso, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-primary far fa-trash-alt fa-2x" %></td>
+        <th>Nombre</th>
+        <th>Commits</th>
+        <th>Status</th>
+        <th>Contribuidores</th>
+        <th>Versión</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
+    </thead>
+  
+    <tbody>
+      <% @procesos.each do |proceso| %>
+        <tr>
+          <td><%= proceso.nombre %></td>
+          <td><%= proceso.commits %></td>
+          <td>
+            <button type="button" class="btn <% if proceso.status == 'Solicitud de Aprobacion' %> btn-outline-warning <% elsif proceso.status == 'Rechazado' %> btn-outline-danger <% else %> btn-outline-success <% end %>"  aria-haspopup="true" aria-expanded="false" disabled>
+              <%= proceso.status %>
+            </button>
+          </td>
+          <td><%= proceso.contribuidores %></td>
+          <td><%= proceso.version %></td>
+          <td><%= link_to '', proceso, class: "btn btn-outline-primary fas fa-eye fa-2x" %></td>
+          <td><%= link_to '', edit_proceso_path(proceso), class: "btn btn-outline-primary far fa-edit fa-2x" %></td>
+          <td><%= link_to '', proceso, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-primary far fa-trash-alt fa-2x" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
 </div>
 </main>
 

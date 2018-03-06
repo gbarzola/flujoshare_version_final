@@ -33,6 +33,8 @@ class ProcesosController < ApplicationController
       if @proceso.status == "Solicitud de Aprobacion"
         record = Record.new
         record.proceso_id = @proceso.id
+        record.user_edit = current_user.email
+        record.version_edit = Proceso.where(user_id: current_user.id).last.version
         record.save
       end
       else
@@ -52,6 +54,8 @@ class ProcesosController < ApplicationController
       if @proceso.status == "Solicitud de Aprobacion"
         record = Record.new
         record.proceso_id = @proceso.id
+        record.user_edit = current_user.email
+        record.version_edit = Proceso.where(user_id: current_user.id).last.version
         record.save
       end
       else

@@ -1,9 +1,12 @@
 <%= render 'procesos/nav' %>
-
-<br> 
-<h1>Editing Proceso</h1>
-
-<%= render 'form', proceso: @proceso %>
-
-<%= link_to 'Show', @proceso %> |
-<%= link_to 'Back', procesos_path %>
+<main role="main" class="container">
+<div class="my-3 p-3 bg-white rounded box-shadow">
+    <br> 
+    <h1>Editing Proceso</h1>
+    
+    <%= render 'form', proceso: @proceso %>
+    
+    <%= link_to 'Show', @proceso %> |
+    <%= link_to 'Back', procesos_path %>
+</div>
+</main>

@@ -104,3 +104,20 @@ nav.navbar.navbar-light {
   color: #0c5460; }
 
 
+#notice_wrapper{
+  position: absolute;
+  top:0;
+  width:85%;
+  z-index:999;
+  background: rgba(135, 216, 211,0.85); 
+}
+
+#notice_wrapper > p{
+  padding: 1.5rem 0;
+  text-align:center;
+  margin:0;
+  font-size:0.8rem;
+  font-weight: 700;
+  color:#FFFFFF;
+  letter-spacing: 1px;
+}
